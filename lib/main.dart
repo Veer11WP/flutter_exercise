@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     Colors.orange
   ];
   var currentColor = Colors.white;
-
+  
   setRandomColor(){
     var rnd = Random().nextInt(colors.length);
     setState((){
@@ -48,12 +48,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var btnbgcrandom = Random().nextInt(colors.length);
     return Container(
       color: currentColor,
       child: Center(
         child: RaisedButton(
-          color: Colors.black,
-          padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+          color: colors[btnbgcrandom],
+          padding: EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0),
           child: Text("Change it!",
             style: TextStyle(
               fontSize: 20,
